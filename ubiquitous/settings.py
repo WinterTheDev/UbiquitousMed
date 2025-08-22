@@ -28,9 +28,13 @@ SECRET_KEY = 'django-insecure-8=8_hnpv-8hev3f$slbb4%+k=e_$*8&hwel76=(x22@da7u&fh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app',
+                 'ubiquitousmed.co.za']
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'http://ubiquitousmed.co.za',
+    'https://ubiquitousmed.co.za',
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -120,6 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
