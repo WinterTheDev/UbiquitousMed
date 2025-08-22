@@ -1,0 +1,377 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <title>{{page_title}}</title>
+</head>
+<body>
+    <header>
+        <div class="nav-contact">
+            <p class="phone">
+                <span>
+                    <ion-icon name="mail"></ion-icon>
+                </span>
+                info@ubiquitousmed.co.za
+            </p>
+            <p class="email">
+                <span>
+                    <ion-icon name="call"></ion-icon>
+                </span>
+                +27 73 514 0200
+            </p>
+        </div>
+        <nav>
+            <img class="nav-logo" src="{% static 'assets/logo.png' %}" alt="Ubiquitous Med Logo">
+            <button type="button" id="nav-toggle" data-bs-toggle="offcanvas" data-bs-target="#responsive-nav" aria-controls="offcanvasExample">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+            <ul class="nav-list">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About us</a></li>
+                <!-- <li><a href="#">Our Services</a></li> -->
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a class="nav-consult" href="#" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                Book a Consult
+            </a>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="responsive-nav" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <img class="nav-logo" src="{% static 'assets/logo.png' %}" alt="Ubiquitous Med Logo">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="responsive-navlist">
+                        <li><a class="resp-link" href="#">Home</a></li>
+                        <li><a class="resp-link" href="#">About us</a></li>
+                        <li><a class="resp-link" href="#">Our Centres</a></li>
+                        <li><a class="resp-link" href="#">Our Services</a></li>
+                        <li><a class="resp-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="header-content">
+            <h2>
+                Bringing Healthcare to<br>
+                EVERYONE, EVERYWHERE
+            </h2>
+            <p>
+                A fresh new approach in healthcare delivery through innovation, integrity, and inclusivity.
+                Healthcare is everyone's right.<br>Let us make sure you get yours.
+            </p>
+            <div class="header-links">
+                <a class="consult" href="#" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                Book a Consult
+            </a>
+                <a class="learn" href="#about">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </header>
+    <section id="compliance">
+        <h3>
+            We operate in compliance with:
+        </h3>
+        <div class="compliance-logos">
+            <div>
+                <img src="{% static 'assets/img/doh.png' %}" alt="South African Department of Health logo" class="compliance-logo">
+            </div>
+            <div>
+                <img src="{% static 'assets/img/hpcsa.png' %}" alt="Health Professional Council of South Africa logo" class="compliance-logo">
+            </div>
+            <div>
+                <img src="{% static 'assets/img/sanc.png' %}" alt="South African Nursnig Council logo" class="compliance-logo">
+            </div>
+            <div>
+                <img src="{% static 'assets/img/iso.png' %}" alt="South African Department of Health logo" class="compliance-logo">
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="about-header">
+            <h2>About Us</h2>
+        </div>
+        <div class="description">
+            <h2>About Us</h2>
+            <span>
+                Ubiquitous Medical Services is a dynamic and mobile healthcare provider based in Cape Town.
+            </span>
+            <span>
+                Founded in July 2025, our mission is simple: to deliver reliable, accessible, and professional healthcare wherever it's needed.
+            </span>
+            <span>
+                Our name reflects our purpose — to be present wherever healthcare is required, ensuring that businesses, individuals, and communities have access to essential medical services that promote well-being and safety.
+            </span>
+        </div>
+    </section>
+    <section id="provinces">
+        <h3>
+            We operate in:
+        </h3>
+        <div class="province-cards">
+            <div class="province-card">
+                <h4>Western Cape</h4>
+                <img src="{% static 'assets/img/province-1.jpeg' %}">
+            </div>
+            <div class="province-card">
+                <h4>Gauteng</h4>
+                <img src="{% static 'assets/img/province-2.jpeg' %}">
+            </div>
+            <div class="province-card">
+                <h4>North West</h4>
+                <img src="{% static 'assets/img/province-3.jpeg' %}">
+            </div>
+        </div>
+    </section>
+    <section id="team">
+        <img class="nav-logo" src="{% static 'assets/logo.png' %}" alt="Ubiquitous Med Logo">
+        <h2>Our Medical Professionals</h2>
+        <p class="description">
+            At Ubiquitous Medical Services, our strength lies in our people. 
+            Our multidisciplinary team includes qualified medical practitioners, 
+            registered nurses, allied health professionals, and community health 
+            educators — all united by a passion for ethical care and lasting impact.
+        </p>
+
+        <div class="members">
+            <div class="member">
+                <img src="{% static 'assets/img/team-1.png' %}" alt="Dr Thembinkosi Booizene">
+                <h3>Dr Thembinkosi Booizene</h3>
+                <p>General Practitioner — Pretoria</p>
+            </div>
+            <div class="member">
+                <img src="{% static 'assets/img/team-2.png' %}" alt="Molefitheko Shebi">
+                <h3>Molefitheko Shebi</h3>
+                <p>Professional Nurse, Health Science Management Specialist — Cape Town</p>
+            </div>
+            <div class="member">
+                <img src="{% static 'assets/img/team-3.png' %}" alt="Dr Tshikovhi-Ndou">
+                <h3>Dr Tshikovhi-Ndou</h3>
+                <p>Occupational Health Specialist — Cape Town</p>
+            </div>
+            <div class="member">
+                <img src="{% static 'assets/img/team-4.png' %}" alt="Thembi Masiko">
+                <h3>Thembi Masiko</h3>
+                <p>Occupational Health & Health Science Management Specialist — Cape Town</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-header">
+            <h2>Let's build together</h2>
+            <p class="contact-tagline">
+                Let us answer any questions you may have regarding our 
+                services, and we'll make sure to get back to you
+                as soon as possible!
+            </p>
+        </div>
+        <div class="contact-content">
+            <form method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <div class="form-block">
+                    <label for="id_full_name">Full Name:</label>
+                    <input type="text" name="full_name" id="id_full_name" required>
+                </div>
+                <div class="form-block">
+                    <label for="id_company_name">Company Name:</label>
+                    <input type="text" name="company_name" id="id_company_name" placeholder="Optional">
+                </div>
+                <div class="form-block">
+                    <label for="id_email">Email Address:</label>
+                    <input type="email" name="email" id="id_email" required>
+                </div>
+                <div class="form-block">
+                    <label for="id_phone_number">Phone Number:</label>
+                    <input type="tel" name="phone_number" id="id_phone_number" placeholder="Preferably your office number">
+                </div>
+                <div class="form-block">
+                    <label for="id_service">Service:</label>
+                    <select name="service" id="id_service" required>
+                        <option value="insurance_medicals">Insurance Medicals</option>
+                        <option value="occupational_medicals">Occupational Health Medicals</option>
+                        <option value="travel_nurses">Travel Nurses</option>
+                        <option value="mobile_clinics">Health &amp; Safety Mobile Clinics</option>
+                    </select>
+                </div>
+                <div class="form-block">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            <div class="contact-details">
+                <div>
+                    <h5>Physical Address</h5>
+                    <p>Building No. 28</p>
+                    <p>Prudence Business Park</p>
+                    <p>Rosebank, Johannesburg</p>
+                </div>
+                <div>
+                    <h5>Contact Details</h5>
+                    <p class="phone">+27 71 234 5678</p>
+                    <p>info@neothalamos.com</p>
+                    <div class="contact-social-links">
+                        <a href="https://x.com/winterthedev" target="_blank">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rhulanimogotsi/" target="_blank">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                        <a href="https://github.com/CodeMasterWinter" target="_blank">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                        <a href="https://winterthedev.io" target="_blank">
+                            <ion-icon name="globe-outline"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if messages %}
+            <ul class="message-column">
+                {% for message in messages %}
+                    <li class="message">
+                        <h5>
+                            {% if message.tags == "error" %}
+                                <ion-icon name="alert-circle"></ion-icon>
+                            {% elif message.tags == "success" %}
+                                <ion-icon name="checkmark-circle"></ion-icon>
+                            {% endif %}
+                        </h5>
+                        <p>{{message}}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </section>
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="bookingModalLabel">Book a Consult</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="{% url 'booking' %}">
+                        {% csrf_token %}
+                        <div class="form-block">
+                            <label for="id_full_name">Full Name:</label>
+                            <input type="text" name="full_name" id="id_full_name" required>
+                        </div>
+                        <div class="form-block">
+                            <label for="id_company_name">Company Name:</label>
+                            <input type="text" name="company_name" id="id_company_name" placeholder="Optional">
+                        </div>
+                        <div class="form-block">
+                            <label for="id_email">Email Address:</label>
+                            <input type="email" name="email" id="id_email" required>
+                        </div>
+                        <div class="form-block">
+                            <label for="id_phone_number">Phone Number:</label>
+                            <input type="tel" name="phone_number" id="id_phone_number" placeholder="Preferably your office number">
+                        </div>
+                        <div class="form-block">
+                            <label for="id_service">Service:</label>
+                            <select name="service" id="id_service" required>
+                                <option value="insurance_medicals">Insurance Medicals</option>
+                                <option value="occupational_medicals">Occupational Health Medicals</option>
+                                <option value="travel_nurses">Travel Nurses</option>
+                                <option value="mobile_clinics">Health &amp; Safety Mobile Clinics</option>
+                            </select>
+                        </div>
+                        <div class="form-block">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="brand-info">
+                <img class="nav-logo" src="{% static 'assets/logo.png' %}" alt="Ubiquitous Med Logo">
+
+                <ul class="footer-address">
+                    <li>
+                        42 Kloof Street,
+                    </li>
+                    <li>
+                        Pseudorealistic Gardens,
+                    </li>
+                    <li>
+                        Cape Town, Western Cape,
+                    </li>
+                    <li>
+                        8001, South Africa
+                    </li>
+                </ul>
+            </div>
+            <div class="copyright-socials">
+                <p class="copyright">
+                    © 2025 UBIQUITOUS MEDICAL SERVICES
+                </p>
+                <ul class="footer-socials">
+                    <li>
+                        <a href="#">
+                            <ion-icon name="logo-whatsapp"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.resp-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const closeBtn = document.querySelector('.btn-close');
+                if (closeBtn) {
+                closeBtn.click(); // virtually trigger the close button
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+@media screen and (min-width: 720px){
+
+    .nav-logo {
+        width: 8%;
+    }
+
+    .nav-contact {
+        gap: 2rem;
+        display: flex;
+        background: #6A91DB;
+        justify-content: center;
+    }
+
+    .header-content h2 {
+        font-size: 6vw;
+    }
+
+    .header-content p {
+        font-size: 1.2rem;
+    }
+
+    .nav-contact p {
+        margin: 0;
+        padding: .5rem;
+        display: flex;
+        color: #ffffff;
+        align-items: center;
+    }
+
+    .nav-contact p span {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        color: #6A91DB;
+        border-radius: 50%;
+        align-items: center;
+        margin-right: 1rem;
+        justify-content: center;
+        background-color: #ffffff;
+    }
+
+    .compliance-logos {
+        gap: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .compliance-logo {
+        max-width: 6rem;
+    }
+
+    #about {
+        display: flex;
+    }
+
+    #about .description {
+        width: 60%;
+        margin: 4rem auto;
+    }
+        
+    .province-cards {
+        gap: 1rem;
+        padding: 1rem;
+        flex-direction: row;
+    }
+        
+    .province-card {
+        flex: 1;
+        height: 35vh;
+        max-height: 35vh;
+    }
+        
+    #team {
+        padding: 3rem 1rem;
+    }
+    
+    #team svg {
+        width: 20%;
+        height: min-content;
+    }
+
+    #team .description {
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+    }
+
+    .members {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .member {
+        padding: 1rem;
+    }
+
+    #contact form {
+        grid-template-columns: 1fr 1fr;
+    }
+        
+    .contact-header p {
+        font-size: 1.6rem;
+    }
+
+    .contact-details {
+        flex-direction: row;
+    }
+    
+    .contact-details div {
+        flex: 1;
+    }
+
+    footer {
+        height: 40vh;
+        max-height: 40vh;
+    }
+
+    #footer-logo {
+        width: 16rem;
+    }
+
+    footer .brand-info {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .footer-address {
+        margin-top: 0;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+
+    .copyright-socials {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer .copyright {
+        margin-bottom: 0;
+    }
+
+    .footer-socials {
+        gap: .75rem;
+    }
+}
+
+@media screen and (min-width: 1240px) and (orientation: landscape) {
+
+    header {
+        height: 100vh;
+    }
+
+    .nav-logo {
+        width: auto;
+        height: 100%;
+    }
+
+    #nav-toggle,
+    #responsive-nav {
+        display: none;
+    }
+
+    .nav-list {
+        gap: 1rem;
+        margin: 0;
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-list li {
+        text-decoration: none;
+        color: var(--primary-blue);
+    }
+
+    .nav-list li a {
+        padding: .5rem;
+        border-radius: .5rem;
+        text-decoration: none;
+        color: var(--primary-blue);
+        transition: .3s ease background-color;
+    }
+
+    .nav-list li a:hover {
+        background-color: #00000010;
+    }
+
+    .nav-consult {
+        display: flex;
+    }
+    
+    .header-content h2 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+    .header-content p {
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+    }
+        
+    .header-links a {
+        width: 8rem;
+        padding: .5rem;
+    }
+    
+    .compliance-logos {
+        margin: 10rem 0;
+        justify-content: space-evenly;
+    }
+
+    .compliance-logo {
+        max-width: 10rem;
+    }
+
+    #compliance h3::after,
+    #provinces h3::after {
+        width: 10%;
+    }
+
+    .province-cards {
+        gap: 3rem;
+        width: 80%;
+        margin: auto;
+    }
+
+    #about {
+        gap: 4rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-header {
+        width: 40%;
+        height: 60vh;
+        max-height: none;
+    }
+
+    .about-header h2 {
+        display: none;
+    }
+
+    #about .description {
+        margin: 0;
+        width: 50%;
+        gap: 2rem;
+        display: flex;
+        font-size: 1.2rem;
+        text-align: left;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #about .description h2 {
+        display: block;
+        color: #1e1e1e;
+        font-size: 4rem;
+    }
+
+    #provinces {
+        margin: 10rem 0;
+    }
+
+    .province-card {
+        height: 40vh;
+        max-height: 40vh;
+    }
+        
+    #team .nav-logo,
+    footer .nav-logo {
+        width: 8%;
+        max-height: none;
+        margin-bottom: 2rem;
+        height: min-content;
+    }
+    
+    .members {
+        margin-top: 5rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    footer {
+        height: 50vh;
+        max-height: 50vh;
+    }
+
+    .contact-header h2 {
+        color: #ffffff;
+        font-size: 6rem;
+    }
+    
+    .contact-tagline {
+        width: 50%;
+    }
+    
+    .contact-content {
+        align-items: flex-end;
+        flex-direction: row;
+    }
+
+    #contact {
+        padding: 2rem;
+        background: url(../assets/img/contact-bg.jpg) center no-repeat;
+        background-size: cover;
+    }
+
+    #contact form {
+        width: 50%;
+    }
+    
+    .form-block label,
+    .contact-tagline {
+        font-size: 1.2rem;
+    }
+    
+    .contact-details {
+        align-items: flex-end;
+    }
+    
+    .contact-details div {
+        height: min-content;
+    }
+}
+
+@media screen and (min-width: 1650px) {
+        
+    .header-content h2 {
+        font-size: 5rem;
+    }
+
+    .header-content p {
+        font-size: 1.6rem;
+    }
+
+    #about .description {
+        width: 30%;
+        font-size: 1.6rem;
+    }
+
+    #footer-logo {
+        width: 16rem;
+    }
+}
