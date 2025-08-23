@@ -37,9 +37,7 @@ ALLOWED_HOSTS = ['.vercel.app',
                  'ubiquitous-med-git-main-winter-mogotsis-projects.vercel.app']
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://ubiquitousmed.co.za',
     'https://ubiquitousmed.co.za',
-    'http://www.ubiquitousmed.co.za',
     'https://www.ubiquitousmed.co.za',
     'https://ubiquitous-med-git-main-winter-mogotsis-projects.vercel.app',
 ]
@@ -100,13 +98,13 @@ if DEBUG:
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.postgresql',
             'NAME': os.getenv('DB_NAME', "postgres"),
             'USER': os.getenv('DB_USER', "postgres"),
             'PASSWORD': os.getenv('DB_PASS', ""),
             'HOST': os.getenv('DB_HOST'),
             'PORT': os.getenv('DB_PORT', default='5432'),
-        }
+        },
     }
 
 # Password validation
