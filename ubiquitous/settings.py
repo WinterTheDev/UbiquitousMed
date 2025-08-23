@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 import os
+import psycopg2
 from dotenv import load_dotenv
 from pathlib import Path
 from urllib.parse import urlparse
@@ -93,7 +94,7 @@ if DEBUG:
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.postgresql',
             'NAME': os.getenv('DB_NAME', "postgres"),
             'USER': os.getenv('DB_USER', "postgres"),
             'PASSWORD': os.getenv('DB_PASS', ""),
