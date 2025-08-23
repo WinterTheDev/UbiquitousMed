@@ -32,12 +32,18 @@ DEBUG = os.getenv("DEBUG", "True") == "True"
 
 
 ALLOWED_HOSTS = ['.vercel.app',
-                 'ubiquitousmed.co.za']
+                 'ubiquitousmed.co.za',
+                 'www.ubiquitousmed.co.za',
+                 'ubiquitous-med-git-main-winter-mogotsis-projects.vercel.app']
 
 CSRF_TRUSTED_ORIGINS = [
     'http://ubiquitousmed.co.za',
     'https://ubiquitousmed.co.za',
+    'http://www.ubiquitousmed.co.za',
+    'https://www.ubiquitousmed.co.za',
+    'https://ubiquitous-med-git-main-winter-mogotsis-projects.vercel.app',
 ]
+
 # Application definition
 
 INSTALLED_APPS = [
