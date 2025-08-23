@@ -98,6 +98,9 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST'),
         'PORT': os.getenv('DB_PORT', default='5432'),
     },
+    'OPTIONS': {
+            'sslmode': 'require',  # mandatory for Supabase
+        },
 }
 
 # Password validation
