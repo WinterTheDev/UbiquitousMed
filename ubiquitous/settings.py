@@ -11,10 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 import os
-import psycopg2
 from dotenv import load_dotenv
 from pathlib import Path
-from urllib.parse import urlparse
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +26,7 @@ load_dotenv()
 SECRET_KEY = 'django-insecure-8=8_hnpv-8hev3f$slbb4%+k=e_$*8&hwel76=(x22@da7u&fh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "True") == "True"
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 
 ALLOWED_HOSTS = ['.vercel.app',
@@ -56,10 +54,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -88,20 +86,24 @@ WSGI_APPLICATION = 'ubiquitous.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', "postgres"),
-        'USER': os.getenv('DB_USER', "postgres"),
-        'PASSWORD': os.getenv('DB_PASS', ""),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT', default='5432'),
-    },
-    'OPTIONS': {
-            'sslmode': 'require',  # mandatory for Supabase
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('DB_NAME', "postgres"),
+            'USER': os.getenv('DB_USER', "postgres"),
+            'PASSWORD': os.getenv('DB_PASS', ""),
+            'HOST': os.getenv('DB_HOST'),
+            'PORT': os.getenv('DB_PORT', default='5432'),
         },
-}
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -139,7 +141,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
