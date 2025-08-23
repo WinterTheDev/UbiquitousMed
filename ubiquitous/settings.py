@@ -27,7 +27,8 @@ load_dotenv()
 SECRET_KEY = 'django-insecure-8=8_hnpv-8hev3f$slbb4%+k=e_$*8&hwel76=(x22@da7u&fh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = os.getenv("DEBUG", "True") == "True"
+
 
 ALLOWED_HOSTS = ['.vercel.app',
                  'ubiquitousmed.co.za']
@@ -90,20 +91,16 @@ if DEBUG:
         }
     }
 else:
-    db_url = os.getenv("DATABASE_URL")
-    if db_url:
-        result = urlparse(db_url)
-
-        DATABASES = {
-            "default": {
-                "ENGINE": "django.db.backends.postgresql",
-                "NAME": result.path[1:],  # strip leading "/"
-                "USER": result.username,
-                "PASSWORD": result.password,
-                "HOST": result.hostname,
-                "PORT": result.port,
-            }
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.getenv('DB_NAME', "postgres"),
+            'USER': os.getenv('DB_USER', "postgres"),
+            'PASSWORD': os.getenv('DB_PASS', ""),
+            'HOST': os.getenv('DB_HOST'),
+            'PORT': os.getenv('DB_PORT', default='5432'),
         }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
